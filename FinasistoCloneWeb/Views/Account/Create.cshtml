@@ -1,0 +1,28 @@
+﻿@{ 
+    var account = (Account)Model;
+}
+
+<h1>Crear Cuenta</h1>
+
+    <form action="/account/create" method="post">
+
+        Tipo <select name="Type">
+            <option value=" Efectivo">Efectivo</option>
+            <option value=" BCP">BCP</option>
+            <option value=" BBVA">BBVA</option>
+            <option value=" MasterCard">MasterCard</option>
+        </select>
+
+        Nombre <input name="Name" />
+        @Html.ValidationMessage("Name")
+
+        Divisa <select name="Currency">
+            <option value=" Soles">Soles</option>
+        </select>
+
+        Saldo Inicial <input name="Ammount" />
+        @Html.ValidationMessage("Ammount")
+
+        <button>Guardar</button>
+
+    </form>
